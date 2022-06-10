@@ -9,17 +9,13 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ManageDataComponent implements OnInit {
 
-  constructor(private data: DataService, private client: HttpClient) {
+  constructor(private data: DataService) {
   }
 
   ngOnInit(): void {
   }
 
-  downloadData() {
-    this.client.get<Ticket[]>("http://localhost:8099/nag/storage/tickets").subscribe(newArray => {
-      console.log(newArray);
-      this.data.downloadData(newArray)
-    })
+  downloadData() {this.data.downloadData()
   }
 
   uploadData() {

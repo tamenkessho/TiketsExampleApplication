@@ -1,30 +1,19 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {HttpService} from "./http.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  public array: Ticket[] = [
-    new Ticket(
-      "I require help with email",
-      "I really need help with my new email address right now. New NAG email doesn't work properly.",
-      true,
-      52,
-      "March 17, 2005"
-    ),
-    new Ticket(
-      "Require NgRx support",
-      "HEYYY SOUFIAN! GUESS WHAT? YESSS I AGAIN CAN'T DEAL WITH NGRX. Heeelp me, mate!",
-      false,
-      38,
-      "May 19, 2022"
-    )
-  ]
+  public array: Ticket[] = [];
+  var= this.http.askForTickets().subscribe(next => this.array = next)
 
-  constructor(private client: HttpClient) {
+  constructor(private http: HttpService) {
   }
+
+
 
   deleteTicket(index: number) {
     this.array.splice(index, 1);
@@ -42,8 +31,8 @@ export class DataService {
     this.array.splice(0);
   }
 
-  downloadData(httpArray: Ticket[]) {
-    this.array = httpArray;
+  downloadData() {
+    this.http.askForTickets().subscribe(next => this.array = next)
     console.log("Data updated");
     console.log(this.array)
   }
