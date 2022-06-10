@@ -1,0 +1,20 @@
+<div class="ticket">
+  <div class="box">
+    <div class="box1">
+      <h1>{{ticket.ID}}</h1>
+      <label class="switch">
+        <input type="checkbox" [(ngModel)]="ticket.status">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="box2">
+      <input style="position: relative; left: 0px" value="{{ticket.title}}">
+      <input style="position: relative; margin-left: 12%" readonly value="{{ticket.dateTime}}">
+      <textarea style="resize: none; width: 94%; height: 70%" value="{{ticket.description}}"></textarea>
+    </div>
+    <div class="box3">
+      <button class="deleteButton">×</button>
+    </div>
+  </div>
+</div>
+

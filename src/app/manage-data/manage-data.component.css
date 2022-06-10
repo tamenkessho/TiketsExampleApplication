@@ -1,0 +1,30 @@
+.hoverObj {
+  border: 1px solid #5b5b5b;
+  position: fixed;
+  left: 54%;
+  top: 70px;
+  size: auto;
+  width: 700px;
+  height: 100px;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  background-color: #bda2f3;
+
+  display: block;
+  z-index: 99999;
+}
+
+.holder {
+  margin-top: 20px;
+  }
+
+.styledButton {
+  color: white;
+  position: relative;
+  height: 60px;
+  width: 200px;
+  background-color: #56377c;
+  border-radius: 10px;
+  border: 1px solid #5b5b5b;
+  margin-left: 24px;
+}
