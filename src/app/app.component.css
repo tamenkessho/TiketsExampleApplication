@@ -29,6 +29,7 @@ button {
 }
 
 .toolbar {
+  z-index: 9999999;
   position: fixed;
   top: 0;
   left: 0;

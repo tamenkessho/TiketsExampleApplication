@@ -1,3 +1,4 @@
 <h2>Tickets view component</h2>
 <hr>
-<app-ticket *ngFor="let ticket of tickets" [ticket]="ticket"></app-ticket>
+<app-ticket *ngFor="let ticket of this.dataservice.array; let i = index" [ticketNumber]="i"
+            [ticket]="ticket"></app-ticket>

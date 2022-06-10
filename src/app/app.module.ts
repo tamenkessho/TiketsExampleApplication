@@ -15,6 +15,7 @@ import { ManageDataComponent } from './manage-data/manage-data.component';
 import { TicketViewComponent } from './ticket-view/ticket-view.component';
 import { TicketComponent } from './ticket-view/ticket/ticket.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {FormsModule} from "@angular/forms";
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

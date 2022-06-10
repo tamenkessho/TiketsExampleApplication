@@ -4,8 +4,8 @@
     <textarea #description class="description" placeholder="Input detailed description of your support ticket inside of this field..."></textarea>
     <button (click)="saveTicket(title, description, ticketStatus)" class="saveButton">Save ticket</button>
     <label class="statusLabel">Status</label>
-    <label class="switch">
-      <input #ticketStatus type="checkbox">
+    <label class="switch" >
+      <input [(ngModel)]="ticketStatus" type="checkbox">
       <span class="slider round"></span>
     </label>
   </div>

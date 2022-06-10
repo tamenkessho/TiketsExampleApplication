@@ -1,13 +1,13 @@
 hr {
-  border:none;
-  border-top:1px dashed #bba0f1;
-  color:#fff;
-  background-color:#fff;
-  height:1px;
-  width:70%;
+  border: none;
+  border-top: 1px dashed #bba0f1;
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  width: 70%;
 }
 
-h2{
+h2 {
   text-align: center;
   color: #56377c;
 }

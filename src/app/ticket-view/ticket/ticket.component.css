@@ -75,6 +75,7 @@ input:checked + .slider:before {
   position: relative;
   min-height: 100px;
   height: auto;
+  z-index: 426;
 }
 
 .box {
