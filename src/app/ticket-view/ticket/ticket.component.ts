@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {DataService, Ticket} from "../../data.service";
 
 @Component({
@@ -6,7 +6,7 @@ import {DataService, Ticket} from "../../data.service";
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.css']
 })
-export class TicketComponent implements OnInit {
+export class TicketComponent {
 
   @Input()
   ticket!: Ticket;
@@ -16,14 +16,6 @@ export class TicketComponent implements OnInit {
   constructor(private data: DataService) {
   }
 
-  ngOnInit(): void {
-    console.log(this.ticket)
-  }
-
-
-  // returnUpdatedTicket(status: any, title: any, description: any) {
-  //   console.log(new Ticket(title.value, description.value, this.ticket.status, this.ticket.ID, this.ticket.dateTime))
-  // }
   deleteTicket() {
     this.data.deleteTicket(this.ticketNumber)
   }

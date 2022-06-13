@@ -15,9 +15,6 @@ export class HttpService {
   }
 
   saveUpdatedTickets(tickets: Ticket[]) {
-    console.log("Does it really executed?")
-    console.log(tickets)
     this.http.put("http://localhost:8099/nag/storage/upload/tickets", tickets).subscribe();
-    console.log("Yeeesss it is..")
   }
 }

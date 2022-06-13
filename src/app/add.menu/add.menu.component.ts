@@ -13,15 +13,16 @@ export class AddMenuComponent {
   constructor(private data: DataService) {
   }
 
-  saveTicket(title: any, description: any, status: any) {
+  saveTicket(title: any, description: any) {
 
-    this.data.appendTicket(new Ticket(
-
-      title.value,
-      description.value,
-      this.ticketStatus,
-      this.data.getUniqId(),
-      DateTime.now().toFormat('HH:mm:ss / MMMM dd, yyyy')
-    ))
+    this.data.appendTicket(
+      new Ticket(
+        title.value,
+        description.value,
+        this.ticketStatus,
+        this.data.getUniqId(),
+        DateTime.now().toFormat('HH:mm:ss / MMMM dd, yyyy')
+      )
+    )
   }
 }

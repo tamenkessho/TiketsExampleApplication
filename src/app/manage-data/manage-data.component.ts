@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {DataService} from "../data.service";
 
 @Component({
@@ -6,22 +6,10 @@ import {DataService} from "../data.service";
   templateUrl: './manage-data.component.html',
   styleUrls: ['./manage-data.component.css']
 })
-export class ManageDataComponent implements OnInit {
+export class ManageDataComponent {
 
-  constructor(private data: DataService) {
-  }
-
-  ngOnInit(): void {
-  }
-
-  downloadData() {this.data.downloadData()
-  }
-
-  uploadData() {
-    this.data.uploadData()
-  }
-
-  cleanData() {
-    this.data.cleanArray()
-  }
+  constructor(private data: DataService) { }
+  downloadData() { this.data.downloadData() }
+  uploadData() { this.data.uploadData() }
+  cleanData() { this.data.cleanArray() }
 }

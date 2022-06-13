@@ -7,6 +7,6 @@ import {DataService} from '../data.service'
   styleUrls: ['./ticket-view.component.css']
 })
 export class TicketViewComponent {
-  constructor(protected dataservice: DataService) {
+  constructor(public dataservice: DataService) {
   }
 }

@@ -3,14 +3,14 @@
     <div class="box1">
       <h1>{{ticket.ID}}</h1>
       <label class="switch">
-        <input #status [(ngModel)]="ticket.status" type="checkbox">
+        <input [(ngModel)]="ticket.status" type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
     <div class="box2">
-      <input #title [(ngModel)]="ticket.title" style="position: relative; left: 0px">
+      <input [(ngModel)]="ticket.title" style="position: relative; left: 0px">
       <input [(ngModel)]="ticket.dateTime" readonly style="position: relative; margin-left: 12%">
-      <textarea #description [(ngModel)]="ticket.description"></textarea>
+      <textarea [(ngModel)]="ticket.description"></textarea>
     </div>
     <div class="box3">
       <button (click)="deleteTicket()" class="deleteButton">×</button>

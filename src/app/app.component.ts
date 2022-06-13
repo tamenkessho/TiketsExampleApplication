@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {DataService} from "./data.service";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,6 @@ import {DataService} from "./data.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private service:DataService) {}
-
   title = 'NAGTicketsApplication';
   addingMenuStatus = false;
   manageDataStatus = false;
@@ -19,17 +16,21 @@ export class AppComponent {
     this.addingMenuStatus = !this.addingMenuStatus
     this.manageDataStatus = false
     this.text2 = "Manage data"
-    if(this.addingMenuStatus){
+    if (this.addingMenuStatus) {
       this.text1 = "Close menu"
-    } else {this.text1 = "Adding menu"}
-
+    } else {
+      this.text1 = "Adding menu"
+    }
   }
+
   manageDataOpen() {
     this.manageDataStatus = !this.manageDataStatus
     this.addingMenuStatus = false
     this.text1 = "Adding menu"
-    if(this.manageDataStatus){
+    if (this.manageDataStatus) {
       this.text2 = "Close menu"
-    }else{this.text2 = "Manage data"}
+    } else {
+      this.text2 = "Manage data"
+    }
   }
 }

@@ -5,21 +5,24 @@ import {HttpService} from "./http.service";
   providedIn: 'root'
 })
 export class DataService {
-
   public array: Ticket[] = [];
-  var = this.http.askForTickets().subscribe(next => this.array = next)
 
-  constructor(private http: HttpService) {
-  }
+  constructor(private http: HttpService) { }
 
+  deleteTicket(index: number) { this.array.splice(index, 1) }
 
-  deleteTicket(index: number) {
-    this.array.splice(index, 1);
-  }
+  appendTicket(ticket: Ticket) { this.array.push(ticket) }
 
-  appendTicket(ticket: Ticket) {
-    this.array.push(ticket);
-  }
+  cleanArray() { this.array.splice(0) }
+
+  uploadData() {
+    this.http.saveUpdatedTickets(this.array);
+    console.log("Data saved to DB") }
+
+  downloadData() {
+    this.http.askForTickets().subscribe(next => this.array = next)
+    console.log("Data updated");
+    console.log(this.array) }
 
   getUniqId() {
     let biggestID = 0;
@@ -29,23 +32,8 @@ export class DataService {
         biggestID = iterableID;
       }
     }
-    return biggestID+1;
-  }
-
-  cleanArray() {
-    this.array.splice(0);
-  }
-
-  downloadData() {
-    this.http.askForTickets().subscribe(next => this.array = next)
-    console.log("Data updated");
-    console.log(this.array)
-  }
-
-  uploadData() {
-    this.http.saveUpdatedTickets(this.array);
-    console.log("Data saved to DB")
-  }
+    return biggestID+1 }
+  var = this.http.askForTickets().subscribe(next => this.array = next)
 }
 
 export class Ticket {
