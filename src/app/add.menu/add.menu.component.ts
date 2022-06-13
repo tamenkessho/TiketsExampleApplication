@@ -10,7 +10,6 @@ import {DateTime} from 'luxon';
 export class AddMenuComponent {
   ticketStatus!: boolean;
 
-
   constructor(private data: DataService) {
   }
 

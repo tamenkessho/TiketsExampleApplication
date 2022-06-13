@@ -64,6 +64,7 @@ input:checked + .slider:before {
 
 .ticket {
   /*text-align: center;*/
+  font-family: Roboto;
   margin-top: 40px;
   border-radius: 20px;
   background-color: #f5f1fe;
@@ -99,6 +100,14 @@ input:checked + .slider:before {
 
 input {
   width: 40%;
+  font-family: Roboto;
+}
+
+textarea {
+  resize: none;
+  width: 94%;
+  height: 70%;
+  font-family: Roboto
 }
 
 .deleteButton {

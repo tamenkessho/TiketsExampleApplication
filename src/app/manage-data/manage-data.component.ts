@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService, Ticket} from "../data.service";
-import {HttpClient} from "@angular/common/http";
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-manage-data',
@@ -19,6 +18,7 @@ export class ManageDataComponent implements OnInit {
   }
 
   uploadData() {
+    this.data.uploadData()
   }
 
   cleanData() {

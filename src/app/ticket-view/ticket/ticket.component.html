@@ -3,17 +3,17 @@
     <div class="box1">
       <h1>{{ticket.ID}}</h1>
       <label class="switch">
-        <input type="checkbox" [(ngModel)]="ticket.status" #status>
+        <input #status [(ngModel)]="ticket.status" type="checkbox">
         <span class="slider round"></span>
       </label>
     </div>
     <div class="box2">
-      <input style="position: relative; left: 0px" value="{{ticket.title}}" #title>
-      <input style="position: relative; margin-left: 12%" readonly value="{{ticket.dateTime}}">
-      <textarea style="resize: none; width: 94%; height: 70%" value="{{ticket.description}}" #description></textarea>
+      <input #title [(ngModel)]="ticket.title" style="position: relative; left: 0px">
+      <input [(ngModel)]="ticket.dateTime" readonly style="position: relative; margin-left: 12%">
+      <textarea #description [(ngModel)]="ticket.description"></textarea>
     </div>
     <div class="box3">
-      <button class="deleteButton" (click)="deleteTicket()">×</button>
+      <button (click)="deleteTicket()" class="deleteButton">×</button>
     </div>
   </div>
 </div>

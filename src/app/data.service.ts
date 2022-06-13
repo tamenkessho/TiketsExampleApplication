@@ -1,5 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {Injectable} from '@angular/core';
 import {HttpService} from "./http.service";
 
 @Injectable({
@@ -8,11 +7,10 @@ import {HttpService} from "./http.service";
 export class DataService {
 
   public array: Ticket[] = [];
-  var= this.http.askForTickets().subscribe(next => this.array = next)
+  var = this.http.askForTickets().subscribe(next => this.array = next)
 
   constructor(private http: HttpService) {
   }
-
 
 
   deleteTicket(index: number) {
@@ -24,7 +22,14 @@ export class DataService {
   }
 
   getUniqId() {
-    return this.array.length;
+    let biggestID = 0;
+    for (let ticket of this.array) {
+      let iterableID = ticket.ID;
+      if(iterableID>biggestID){
+        biggestID = iterableID;
+      }
+    }
+    return biggestID+1;
   }
 
   cleanArray() {
@@ -35,6 +40,11 @@ export class DataService {
     this.http.askForTickets().subscribe(next => this.array = next)
     console.log("Data updated");
     console.log(this.array)
+  }
+
+  uploadData() {
+    this.http.saveUpdatedTickets(this.array);
+    console.log("Data saved to DB")
   }
 }
 
