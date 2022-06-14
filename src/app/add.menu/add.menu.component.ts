@@ -10,11 +10,9 @@ import {DateTime} from 'luxon';
 export class AddMenuComponent {
   ticketStatus!: boolean;
 
-  constructor(private data: DataService) {
-  }
+  constructor(private data: DataService) { }
 
   saveTicket(title: any, description: any) {
-
     this.data.appendTicket(
       new Ticket(
         title.value,
