@@ -63,15 +63,14 @@ input:checked + .slider:before {
 
 .ticket {
   font-family: Roboto;
-  margin-top: 40px;
-  border-radius: 20px;
+  margin-top: 10px;
+  border-radius: 15px;
   background-color: #f5f1fe;
-  height: 100px;
-  width: 75%;
+  width: auto;
   border: 1px solid #5b5b5b;
-  transform: translateX(-50%);
-  left: 50%;
-  position: relative;
+  /*transform: translateX(-50%);*/
+  /*left: 50%;*/
+  /*position: relative;*/
   min-height: 100px;
   height: auto;
   z-index: 426;

@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpService} from "./http.service";
+import {tick} from "@angular/core/testing";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class DataService {
 
   constructor(private http: HttpService) { }
 
-  deleteTicket(index: number) { this.array.splice(index, 1) }
+  deleteTicket(ticket: Ticket) {this.array.splice(this.array.indexOf(ticket), 1) }
 
   appendTicket(ticket: Ticket) { this.array.push(ticket) }
 
@@ -42,16 +43,18 @@ export class Ticket {
   public status: boolean;
   public ID: number;
   public dateTime: string;
+  public group: string;
 
-  constructor(title: string, description: string, status: boolean, ID: number, dateTime: string) {
+  constructor(title: string, description: string, status: boolean, ID: number, dateTime: string, group: string) {
     this.title = title;
     this.description = description;
     this.status = status;
     this.ID = ID;
     this.dateTime = dateTime;
+    this.group = group;
   }
 
   static toString(t: Ticket) {
-    return t.ID + t.title + t.description + t.dateTime + t.status
+    return t.ID + t.title + t.description + t.dateTime + t.status + t.group
   }
 }

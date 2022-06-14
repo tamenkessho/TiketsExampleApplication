@@ -19,8 +19,10 @@ export class AddMenuComponent {
         description.value,
         this.ticketStatus,
         this.data.getUniqId(),
-        DateTime.now().toFormat('HH:mm:ss / MMMM dd, yyyy')
+        DateTime.now().toFormat('HH:mm:ss / MMMM dd, yyyy'),
+        'todo'
       )
     )
+    console.log(this.data.array)
   }
 }

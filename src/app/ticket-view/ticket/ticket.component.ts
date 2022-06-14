@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataService, Ticket} from "../../data.service";
 
 @Component({
@@ -6,17 +6,24 @@ import {DataService, Ticket} from "../../data.service";
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.css']
 })
-export class TicketComponent {
+export class TicketComponent implements OnInit{
 
-  @Input()
+  @Input('ticket')
   ticket!: Ticket;
-  @Input()
+  @Input('ticketNumber')
   ticketNumber!: number;
 
-  constructor(private data: DataService) {
-  }
+  constructor(private data: DataService) {}
+
 
   deleteTicket() {
-    this.data.deleteTicket(this.ticketNumber)
+    this.data.deleteTicket(this.ticket)
+    console.log("ticket " +
+      this.ticketNumber +
+      " deleted")
+  }
+
+  ngOnInit(): void {
+    console.log(this.ticket + " "+ this.ticketNumber+" initialized")
   }
 }

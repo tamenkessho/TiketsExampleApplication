@@ -16,6 +16,7 @@ import {TicketViewComponent} from './ticket-view/ticket-view.component';
 import {TicketComponent} from './ticket-view/ticket/ticket.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -25,20 +26,21 @@ import {HttpClientModule} from "@angular/common/http";
     TicketViewComponent,
     TicketComponent
   ],
-  imports: [
-    MatSliderModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatTreeModule,
-    MatIconModule,
-    MatButtonModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    FormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        MatSliderModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatTreeModule,
+        MatIconModule,
+        MatButtonModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        FormsModule,
+        HttpClientModule,
+        DragDropModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
