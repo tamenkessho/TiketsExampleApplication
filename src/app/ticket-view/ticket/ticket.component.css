@@ -84,15 +84,15 @@ input:checked + .slider:before {
 
 .box1 {
   text-align: center;
-  width: 10%;
+  width: 15%;
 }
 
 .box2 {
-  width: 85%;
+  width: 75%;
 }
 
 .box3 {
-  width: 5%;
+  width: 10%;
 }
 
 input {

@@ -1,40 +1,58 @@
 import {Injectable} from '@angular/core';
 import {HttpService} from "./http.service";
-import {tick} from "@angular/core/testing";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   public array: Ticket[] = [];
+  var = this.http.askForTickets().subscribe(next => this.array = next)
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService) {
+  }
 
-  deleteTicket(ticket: Ticket) {this.array.splice(this.array.indexOf(ticket), 1) }
+  deleteTicket(ticket: Ticket) {
+    this.array.splice(this.array.indexOf(ticket), 1)
+  }
 
-  appendTicket(ticket: Ticket) { this.array.push(ticket) }
+  appendTicket(ticket: Ticket) {
+    this.array.push(ticket)
+  }
 
-  cleanArray() { this.array.splice(0) }
+  cleanArray() {
+    this.array.splice(0)
+  }
 
   uploadData() {
     this.http.saveUpdatedTickets(this.array);
-    console.log("Data saved to DB") }
+    console.log("Data saved to DB")
+  }
 
   downloadData() {
     this.http.askForTickets().subscribe(next => this.array = next)
     console.log("Data updated");
-    console.log(this.array) }
+    console.log(this.array)
+  }
 
   getUniqId() {
     let biggestID = 0;
     for (let ticket of this.array) {
       let iterableID = ticket.ID;
-      if(iterableID>biggestID){
+      if (iterableID > biggestID) {
         biggestID = iterableID;
       }
     }
-    return biggestID+1 }
-  var = this.http.askForTickets().subscribe(next => this.array = next)
+    return biggestID + 1
+  }
+
+  moveTicket(currentTicketIndex: number, newGroup: string) {
+    for (let i = 0; i < this.array.length; i++) {
+      if(this.array[i].ID==currentTicketIndex)
+      {
+        this.array[i].group = newGroup;
+      }
+    }
+  }
 }
 
 export class Ticket {

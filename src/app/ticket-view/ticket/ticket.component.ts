@@ -6,7 +6,7 @@ import {DataService, Ticket} from "../../data.service";
   templateUrl: './ticket.component.html',
   styleUrls: ['./ticket.component.css']
 })
-export class TicketComponent implements OnInit{
+export class TicketComponent{
 
   @Input('ticket')
   ticket!: Ticket;
@@ -18,12 +18,5 @@ export class TicketComponent implements OnInit{
 
   deleteTicket() {
     this.data.deleteTicket(this.ticket)
-    console.log("ticket " +
-      this.ticketNumber +
-      " deleted")
-  }
-
-  ngOnInit(): void {
-    console.log(this.ticket + " "+ this.ticketNumber+" initialized")
   }
 }
