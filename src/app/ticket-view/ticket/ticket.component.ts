@@ -16,6 +16,6 @@ export class TicketComponent{
   constructor(private data: DataService) {}
 
   deleteTicket() {
-    this.data.deleteTicket(this.ticket) // Banzai! Ticket is born with Cyanide-tooth nevermind
+    this.data.deleteTicket(this.ticket) // Banzai! Ticket is born with Cyanide-tooth never mind
   }
 }

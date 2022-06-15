@@ -7,7 +7,7 @@ import {DataService} from "../services/data.service";
   styleUrls: ['./manage-data.component.css']
 })
 export class ManageDataComponent {
-  //I love the way it simple. Holds data management methods
+  //I love the way it is simple. Holds data management methods
   constructor(private data: DataService) { }
   downloadData() { this.data.downloadData() }
   uploadData() { this.data.uploadData() }
