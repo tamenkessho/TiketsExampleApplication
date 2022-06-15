@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DataService, Ticket} from '../data.service'
+import {DataService, Ticket} from '../services/data.service'
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
@@ -11,31 +11,31 @@ export class TicketViewComponent {
   constructor(public dataservice: DataService) {
   }
 
-  drop(event: CdkDragDrop<Ticket[]>) {
+  drop(event: CdkDragDrop<Ticket[]>) { //container been moved
     // @ts-ignore
-    let currentTicketIndex = event
+    let currentTicketIndex = event  //get moved.tickets data
       .item.element.nativeElement
       .children.item(0)
       .firstChild.firstChild
       .firstChild.firstChild
-      .textContent;
+      .textContent; //I swear there are no ways to make it shorter. Java script ¯\_(ツ)_/¯
 
     if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex); //if container in the same list
     } else {
-      transferArrayItem(
+      transferArrayItem( //if container in another list
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,
-        event.currentIndex,
+        event.currentIndex, //ensure Angular material workability. I never wrote this
       );
-      if(event.container.element.nativeElement.className.includes('processing-list')){
+      if(event.container.element.nativeElement.className.includes('processing-list')){ //we also change "group" when ticket move
         this.dataservice.moveTicket(Number(currentTicketIndex), 'processing')
       }
-      else if(event.container.element.nativeElement.className.includes('todo-list')){
+      else if(event.container.element.nativeElement.className.includes('todo-list')){ //I know there are ways to make it shorter
         this.dataservice.moveTicket(Number(currentTicketIndex), 'todo')
       }
-      else if(event.container.element.nativeElement.className.includes('finished-list')){
+      else if(event.container.element.nativeElement.className.includes('finished-list')){ //but I like current readability
         this.dataservice.moveTicket(Number(currentTicketIndex), 'finished')
       }
     }

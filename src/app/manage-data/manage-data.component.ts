@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DataService} from "../data.service";
+import {DataService} from "../services/data.service";
 
 @Component({
   selector: 'app-manage-data',
@@ -7,7 +7,7 @@ import {DataService} from "../data.service";
   styleUrls: ['./manage-data.component.css']
 })
 export class ManageDataComponent {
-
+  //I love the way it simple. Holds data management methods
   constructor(private data: DataService) { }
   downloadData() { this.data.downloadData() }
   uploadData() { this.data.uploadData() }

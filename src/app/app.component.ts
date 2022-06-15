@@ -7,12 +7,12 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'NAGTicketsApplication';
-  addingMenuStatus = false;
+  addingMenuStatus = false; //appearing menus
   manageDataStatus = false;
   text1: string = "Adding menu";
   text2: string = "Manage data";
 
-  addingMenuOpen() {
+  addingMenuOpen() { //opens menu1, closes menu2
     this.addingMenuStatus = !this.addingMenuStatus
     this.manageDataStatus = false
     this.text2 = "Manage data"
@@ -23,7 +23,7 @@ export class AppComponent {
     }
   }
 
-  manageDataOpen() {
+  manageDataOpen() { //does the opposite
     this.manageDataStatus = !this.manageDataStatus
     this.addingMenuStatus = false
     this.text1 = "Adding menu"

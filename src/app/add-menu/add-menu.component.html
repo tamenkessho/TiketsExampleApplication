@@ -1,10 +1,11 @@
 <div class="hoverObj">
   <div class="holder">
-    <input #title class="input" type="text" placeholder="Support ticket title">
-    <textarea #description class="description" placeholder="Input detailed description of your support ticket inside of this field..."></textarea>
+    <input #title class="input" placeholder="Support ticket title" type="text">
+    <textarea #description class="description"
+              placeholder="Input detailed description of your support ticket inside of this field..."></textarea>
     <button (click)="saveTicket(title, description)" class="saveButton">Save ticket</button>
     <label class="statusLabel">Status</label>
-    <label class="switch" >
+    <label class="switch">
       <input [(ngModel)]="ticketStatus" type="checkbox">
       <span class="slider round"></span>
     </label>

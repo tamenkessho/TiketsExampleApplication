@@ -10,7 +10,7 @@ import {LayoutModule} from '@angular/cdk/layout';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import {AddMenuComponent} from "./add.menu/add.menu.component";
+import {AddMenuComponent} from "./add-menu/add-menu.component";
 import {ManageDataComponent} from './manage-data/manage-data.component';
 import {TicketViewComponent} from './ticket-view/ticket-view.component';
 import {TicketComponent} from './ticket-view/ticket/ticket.component';
